@@ -39,19 +39,23 @@ namespace insurapolicy
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Avt newForm = new Avt();
+            avto newForm = new avto();
             newForm.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            polx newForm1 = polx();
-            newForm1.Show();
+
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoginForm_Load_1(object sender, EventArgs e)
+        {
+          
         }
     }
 }

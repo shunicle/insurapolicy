@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="db\Class1.cs" />
     <Compile Include="reg.cs">
       <SubType>Form</SubType>
@@ -63,6 +69,9 @@
     </Compile>
     <EmbeddedResource Include="avto.resx">
       <DependentUpon>avto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reg.resx">
       <DependentUpon>reg.cs</DependentUpon>
