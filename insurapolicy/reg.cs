@@ -39,8 +39,7 @@ namespace insurapolicy
 
         private void button3_Click(object sender, EventArgs e)
         {
-            avto newForm = new avto();
-            newForm.Show();
+          
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -56,6 +55,17 @@ namespace insurapolicy
         private void LoginForm_Load_1(object sender, EventArgs e)
         {
           
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            avto newForm = new avto();
+            newForm.Show();
         }
     }
 }

@@ -144,6 +144,7 @@
             this.RegButton.TabIndex = 15;
             this.RegButton.Text = "Зарегистрироваться";
             this.RegButton.UseVisualStyleBackColor = true;
+            this.RegButton.Click += new System.EventHandler(this.RegButton_Click_1);
             // 
             // menu1
             // 

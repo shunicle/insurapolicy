@@ -47,6 +47,22 @@ namespace insurapolicy
 
         private void RegButton_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void avto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            menu menu = new menu();
+            menu.Show();
+        }
+
+        private void RegButton_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 using (OleDbConnection connection = new OleDbConnection(db.Class1.ConnectionString))
@@ -82,15 +98,7 @@ namespace insurapolicy
                 MessageBox.Show(ex.ToString());
             }
         }
-
-        private void avto_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
+    
 }
+
