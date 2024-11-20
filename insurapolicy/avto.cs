@@ -16,6 +16,7 @@ namespace insurapolicy
         public reg()
         {
             InitializeComponent();
+            
             try
             {
                 List<string> roles = new List<string>();
