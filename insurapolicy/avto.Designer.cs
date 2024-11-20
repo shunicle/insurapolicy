@@ -41,7 +41,7 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.RegButton = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.button1 = new System.Windows.Forms.Button();
+            this.menu1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -145,14 +145,15 @@
             this.RegButton.Text = "Зарегистрироваться";
             this.RegButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // menu1
             // 
-            this.button1.Location = new System.Drawing.Point(362, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 27);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Меню";
-            this.button1.UseVisualStyleBackColor = true;
+            this.menu1.Location = new System.Drawing.Point(362, 12);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(95, 27);
+            this.menu1.TabIndex = 27;
+            this.menu1.Text = "Меню";
+            this.menu1.UseVisualStyleBackColor = true;
+            this.menu1.Click += new System.EventHandler(this.button1_Click);
             // 
             // avto
             // 
@@ -160,7 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(469, 454);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.menu1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.RoleComboBox);
@@ -197,6 +198,6 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button RegButton;
         private System.Windows.Forms.HelpProvider helpProvider1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button menu1;
     }
 }
