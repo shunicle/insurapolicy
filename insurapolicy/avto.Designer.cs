@@ -1,6 +1,6 @@
 ﻿namespace insurapolicy
 {
-    partial class avto
+    partial class reg
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NumberPolicyBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.RoleComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,13 +44,14 @@
             this.menu1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // NumberPolicyBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 26;
+            this.NumberPolicyBox.Location = new System.Drawing.Point(137, 131);
+            this.NumberPolicyBox.Name = "NumberPolicyBox";
+            this.NumberPolicyBox.PasswordChar = '*';
+            this.NumberPolicyBox.Size = new System.Drawing.Size(129, 20);
+            this.NumberPolicyBox.TabIndex = 26;
+            this.NumberPolicyBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -156,14 +157,14 @@
             this.menu1.UseVisualStyleBackColor = true;
             this.menu1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // avto
+            // reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(469, 454);
             this.Controls.Add(this.menu1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NumberPolicyBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.RoleComboBox);
             this.Controls.Add(this.label4);
@@ -176,7 +177,7 @@
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.RegButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "avto";
+            this.Name = "reg";
             this.Text = "Авторизация";
             this.Load += new System.EventHandler(this.avto_Load);
             this.ResumeLayout(false);
@@ -186,7 +187,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NumberPolicyBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox RoleComboBox;
         private System.Windows.Forms.Label label4;

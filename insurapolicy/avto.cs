@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace insurapolicy
 {
-    public partial class avto : Form
+    public partial class reg : Form
     {
-        public avto()
+        public reg()
         {
             InitializeComponent();
             try
@@ -76,6 +76,7 @@ namespace insurapolicy
                     sqlCommand.Parameters.AddWithValue("@Name", NameTextBox.Text);
                     sqlCommand.Parameters.AddWithValue("@Login", LoginTextBox.Text);
                     sqlCommand.Parameters.AddWithValue("@Password", PasswordTextBox.Text);
+                    sqlCommand.Parameters.AddWithValue("@NumberPolicy", NumberPolicyBox.Text);
 
                     int number = sqlCommand.ExecuteNonQuery();
                     if (number >= 1)
@@ -97,6 +98,11 @@ namespace insurapolicy
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

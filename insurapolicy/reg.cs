@@ -59,12 +59,37 @@ namespace insurapolicy
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(db.Class1.ConnectionString))
+                {
+                    connection.Open(); string sqlcommand = "SELECT * FROM [USER] WHERE [LOGIN] = @Login AND [Password]  = @Password;";
+                    OleDbCommand dbCommand = new OleDbCommand(sqlcommand, connection); 
+                    dbCommand.Parameters.AddWithValue("@Login", LogintextBox.Text);
+                    dbCommand.Parameters.AddWithValue("@Password", PasswordtextBox.Text);
+                    using (OleDbDataReader dataReader = dbCommand.ExecuteReader())
+                    {
+                        if (dataReader.Read())
+                        {
+                            MessageBox.Show($"Здраствуйте,{dataReader["firstName"]}"); this.Hide();
+                            menu menu = new menu(); menu.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Неверный логин/пароль!");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            avto newForm = new avto();
+            reg newForm = new reg();
             newForm.Show();
         }
     }
