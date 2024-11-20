@@ -8,6 +8,6 @@ namespace insurapolicy.db
 {
     internal class Class1
     {
-        public static string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = db.accdb;";
+        public static string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = db1.accdb;";
     }
 }
