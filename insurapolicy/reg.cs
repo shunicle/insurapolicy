@@ -1,8 +1,10 @@
-﻿using System;
+﻿using insurapolicy.db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,81 +20,52 @@ namespace insurapolicy
             InitializeComponent();
         }
 
-        private void reg_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void LoginForm_Load_1(object sender, EventArgs e)
         {
-          
+
         }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            try
+            string login = LogintextBox.Text;
+            string password = PasswordtextBox.Text;
+
+            using (var connection = DatabaseHelper.GetConnection())
             {
-                using (OleDbConnection connection = new OleDbConnection(db.Class1.ConnectionString))
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM [User] WHERE Login = ? AND Password = ?";
+                using (var command = new OleDbCommand(query, connection))
                 {
-                    connection.Open(); string sqlcommand = "SELECT * FROM [USER] WHERE [LOGIN] = @Login AND [Password]  = @Password;";
-                    OleDbCommand dbCommand = new OleDbCommand(sqlcommand, connection); 
-                    dbCommand.Parameters.AddWithValue("@Login", LogintextBox.Text);
-                    dbCommand.Parameters.AddWithValue("@Password", PasswordtextBox.Text);
-                    using (OleDbDataReader dataReader = dbCommand.ExecuteReader())
+                    command.Parameters.AddWithValue("@Login", login);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    int userCount = (int)command.ExecuteScalar();
+
+                    if (userCount > 0)
                     {
-                        if (dataReader.Read())
-                        {
-                            MessageBox.Show($"Здраствуйте,{dataReader["firstName"]}"); this.Hide();
-                            menu menu = new menu(); menu.ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Неверный логин/пароль!");
-                        }
+                        menu menu = new menu();
+                        this.Hide();
+                        menu.Show();
+                    }
+                    else
+                    {
+                        lblError.Text = "Неверный email или пароль.";
+                    }
+
+
+                    {
+
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void LogintextBox_TextChanged(object sender, EventArgs e)
         {
-            reg newForm = new reg();
-            newForm.Show();
+
         }
     }
 }
-    
+
 

@@ -33,7 +33,7 @@
             this.LogintextBox = new System.Windows.Forms.TextBox();
             this.PasswordtextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +60,7 @@
             this.LogintextBox.Name = "LogintextBox";
             this.LogintextBox.Size = new System.Drawing.Size(127, 20);
             this.LogintextBox.TabIndex = 2;
+            this.LogintextBox.TextChanged += new System.EventHandler(this.LogintextBox_TextChanged);
             // 
             // PasswordtextBox
             // 
@@ -79,15 +80,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // button2
+            // lblError
             // 
-            this.button2.Location = new System.Drawing.Point(112, 231);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Зарегистрироваться";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(109, 240);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 6;
             // 
             // LoginForm
             // 
@@ -95,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(353, 343);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PasswordtextBox);
             this.Controls.Add(this.LogintextBox);
@@ -117,7 +117,7 @@
         private System.Windows.Forms.TextBox LogintextBox;
         private System.Windows.Forms.TextBox PasswordtextBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblError;
     }
 }
 

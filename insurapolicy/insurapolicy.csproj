@@ -34,6 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.9.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db\dbhelper.cs" />
     <Compile Include="menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +58,12 @@
       <DependentUpon>menu.cs</DependentUpon>
     </Compile>
     <Compile Include="db\Class1.cs" />
+    <Compile Include="policy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="policy.Designer.cs">
+      <DependentUpon>policy.cs</DependentUpon>
+    </Compile>
     <Compile Include="reg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,17 +72,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="avto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="avto.Designer.cs">
-      <DependentUpon>avto.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="avto.resx">
-      <DependentUpon>avto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="policy.resx">
+      <DependentUpon>policy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reg.resx">
       <DependentUpon>reg.cs</DependentUpon>
@@ -85,6 +90,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

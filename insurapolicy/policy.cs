@@ -11,15 +11,14 @@ using System.Windows.Forms;
 
 namespace insurapolicy
 {
-    public partial class menu : Form
+    public partial class policy : Form
     {
-        
-        private void menu_Load(object sender, EventArgs e)
+        public policy()
         {
-
+            InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void policy_Load(object sender, EventArgs e)
         {
 
         }
